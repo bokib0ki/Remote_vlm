@@ -1,0 +1,590 @@
+[
+  {
+    "idx": 0,
+    "path": "DOTA_v2_4096_4096/dota_v2_dota_v2_dota_v2_P5729.png",
+    "question": "The width and calmness of the river in the picture suggest?",
+    "multi-choice options": [
+      "(A) It is a vital transportation route.",
+      "(B) This area might be a nature reserve or an undeveloped natural region.",
+      "(C) This area is likely designated primarily for environmental conservation or activities with minimal human intervention.",
+      "(D) It may serve as a vital natural water source, crucial for the surrounding ecosystem."
+    ],
+    "answer": "D",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4096_4096_dota_v2_dota_v2_dota_v2_P5729_png.jpg"
+  },
+  {
+    "idx": 1,
+    "path": "MiniFrance/44-2013-0370-6755-LA93-0M50-E080.jp2.tif",
+    "question": "What caused the formation of the blue-green lake in the upper left corner of the picture?",
+    "multi-choice options": [
+      "(A) In certain regions, groundwater contains high concentrations of specific minerals, such as iron or copper, which can impart distinct colors to the water.",
+      "(B) The appearance of water can also be influenced by factors such as the angle of sunlight and the depth of the water.",
+      "(C) Eutrophic water bodies are prone to excessive algae growth, which often causes the water to display various colors.",
+      "(D) Agricultural activities can lead to the runoff of chemicals such as fertilizers and pesticides into nearby water bodies, which can alter the color of the water."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_44-2013-0370-6755-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 2,
+    "path": "HRSCD/2006/35-2006-0350-6825-LA93.tif",
+    "question": "Why does the image show more farmland and fewer residential areas?",
+    "multi-choice options": [
+      "(A) This area has been designated as an agricultural zone for the cultivation of crops.",
+      "(B) The population density in this region is low, allowing farmland to cover a larger area to meet the needs of food production.",
+      "(C) The soil type, climatic conditions, and water resources in this region are likely highly suitable for agricultural production, thus attracting extensive farmland development.",
+      "(D) Some regions have historically been important agricultural production areas, and this tradition has been preserved over time."
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/HRSCD_2006_35-2006-0350-6825-LA93_tif.jpg"
+  },
+  {
+    "idx": 3,
+    "path": "MiniFrance/44-2013-0370-6745-LA93-0M50-E080.jp2.tif",
+    "question": "Why are the buildings in the two large housing clusters separated by a road in the top left corner of the picture so different?",
+    "multi-choice options": [
+      "(A) Income levels and development policies lead to the adoption of different building materials and technologies in various regions, resulting in distinct architectural appearances.",
+      "(B) Religious beliefs and lifestyle habits lead to differences in architectural design.",
+      "(C) The large cluster of houses near the top of the image suggests a densely populated residential area, while the numerous large buildings on the left side are likely indicative of an industrial zone.",
+      "(D) Wind direction and terrain may influence the orientation and layout of buildings."
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_44-2013-0370-6745-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 4,
+    "path": "DOTA_v2_4096_4096/dota_v2_dota_v2_dota_v2_P11149.png",
+    "question": "Why is there a cluster of barges in the middle of the river in the satellite images?",
+    "multi-choice options": [
+      "(A) The barge might be waiting to load or unload goods at a nearby port.",
+      "(B) This river is the only navigable route, forcing all barges to pass through this section.",
+      "(C) These barges are part of the local festival and are temporarily moored in the river.",
+      "(D) This river is a popular fishing spot, attracting barges for recreational purposes."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4096_4096_dota_v2_dota_v2_dota_v2_P11149_png.jpg"
+  },
+  {
+    "idx": 5,
+    "path": "DOTA_v2_4912_7360/dota_v2_dota_v2_dota_v2_P6119.png",
+    "question": "Why does the central area of the image exhibit an unusual layout, with buildings arranged in a distinct grid pattern and a large green space in the middle?",
+    "multi-choice options": [
+      "(A) This area is designed as a planned community, optimized for space utilization and featuring recreational zones.",
+      "(B) This pattern emerged due to random construction over time without any specific planning.",
+      "(C) Grid patterns are the result of natural terrain influencing construction.",
+      "(D) The building was constructed in this pattern to avoid the nearby river."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4912_7360_dota_v2_dota_v2_dota_v2_P6119_png.jpg"
+  },
+  {
+    "idx": 6,
+    "path": "HRSCD/2012/35-2012-0340-6790-LA93-0M50-E080.tif",
+    "question": "The presence of multifunctional areas in the image suggests?",
+    "multi-choice options": [
+      "(A) Meeting diverse economic and lifestyle needs without maintaining ecological balance.",
+      "(B) Meet the same economic and living needs while maintaining ecological balance.",
+      "(C) Meeting the same economic and living needs without maintaining ecological balance.",
+      "(D) Meet diverse economic and lifestyle needs while maintaining ecological balance."
+    ],
+    "answer": "D",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/HRSCD_2012_35-2012-0340-6790-LA93-0M50-E080_tif.jpg"
+  },
+  {
+    "idx": 7,
+    "path": "HRSCD/2012/35-2012-0350-6795-LA93-0M50-E080.tif",
+    "question": "Why are the houses in the multi-unit residential image built in a spiral shape?",
+    "multi-choice options": [
+      "(A) To enhance structural stability.",
+      "(B) Possibly for aesthetic appeal or a unique design concept.",
+      "(C) In order to save construction materials.",
+      "(D) To adapt to specific terrain conditions."
+    ],
+    "answer": "B",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/HRSCD_2012_35-2012-0350-6795-LA93-0M50-E080_tif.jpg"
+  },
+  {
+    "idx": 8,
+    "path": "MiniFrance/59-2012-0725-7040-LA93-0M50-E080.jp2.tif",
+    "question": "In the middle on the right side, the lower left corner, and on both sides of the highway in the farmland areas shown in the image, there are multiple lakes or ponds of varying sizes. Why does this occur?",
+    "multi-choice options": [
+      "(A) In urban planning or rural development, artificial lakes or ponds are sometimes created in parks, residential areas, and similar locations to enhance the living environment and the aesthetic appeal of the landscape.",
+      "(B) Some bodies of water are remnants of history, such as old sand quarries and abandoned fishponds, which have gradually evolved into their current state.",
+      "(C) In some agriculturally advanced regions, people construct reservoirs and ponds to store rainwater for irrigating farmlands during dry seasons. In such cases, the size and shape of these water bodies can be designed and adjusted according to specific needs.",
+      "(D) This region is located in a river bend left by the rerouting of a river, or in an area where geological activities, such as earthquakes, have caused land subsidence, leading to the formation of lakes."
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_59-2012-0725-7040-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 9,
+    "path": "HRSCD/2012/35-2012-0350-6815-LA93-0M50-E080.tif",
+    "question": "Why is there a river in the image?",
+    "multi-choice options": [
+      "(A) Due to the presence of clouds in the sky during the satellite imaging, some areas appear to be rivers.",
+      "(B) This region features natural water systems or artificial irrigation systems.",
+      "(C) Man-made structures or roads appear as linear patterns on maps, similar to the shape of rivers.",
+      "(D) Fields of different colors are pieced together, forming patterns resembling rivers."
+    ],
+    "answer": "B",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/HRSCD_2012_35-2012-0350-6815-LA93-0M50-E080_tif.jpg"
+  },
+  {
+    "idx": 10,
+    "path": "DOTA_v2_4096_4096/dota_v2_dota_v2_dota_v2_P9132.png",
+    "question": "What can be inferred from the presence of the breakwater in the image?",
+    "multi-choice options": [
+      "(A) This region faces significant natural risks, necessitating appropriate protective measures to safeguard port facilities and vessels.",
+      "(B) The scale of commercial or logistical activities at this port",
+      "(C) This is a crucial maritime hub, likely involving frequent transshipment of goods and personnel.",
+      "(D) This area may be experiencing a peak period, or there might be specific events or activities currently taking place."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4096_4096_dota_v2_dota_v2_dota_v2_P9132_png.jpg"
+  },
+  {
+    "idx": 11,
+    "path": "MiniFrance/44-2013-0310-6685-LA93-0M50-E080.jp2.tif",
+    "question": "The residential areas near the sea are densely populated. Why is this the case?",
+    "multi-choice options": [
+      "(A) Residential areas near the coast are densely populated due to the abundance of mineral resources available there.",
+      "(B) These residential areas are likely designed to provide residents with the convenience of a seaside lifestyle, while also offering proximity to marine resources and employment opportunities.",
+      "(C) Residential areas near the coast are densely populated due to the presence of significant historical sites.",
+      "(D) Residential areas near the coast are densely populated due to their unique architectural style."
+    ],
+    "answer": "B",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_44-2013-0310-6685-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 12,
+    "path": "DOTA_v2_4912_7360/dota_v2_dota_v2_dota_v2_P4975.png",
+    "question": "Why is there a cluster of spherical structures near the water's edge on the right side of the image?",
+    "multi-choice options": [
+      "(A) The spherical structure is part of a floating pavilion designed for exhibitions and events.",
+      "(B) The spherical structure is a water storage tank for the nearby buildings.",
+      "(C) Spherical structures are part of the wastewater treatment facilities.",
+      "(D) Spherical structures serve as decorative elements in public parks."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4912_7360_dota_v2_dota_v2_dota_v2_P4975_png.jpg"
+  },
+  {
+    "idx": 13,
+    "path": "MiniFrance/56-2013-0235-6755-LA93-0M50-E080.jp2.tif",
+    "question": "The overall color of the picture is dark, yet the area slightly to the right above the river appears brighter. Why does this occur?",
+    "multi-choice options": [
+      "(A) The transparency of the atmosphere varies across different regions, leading to varying degrees of light scattering, which in turn affects the brightness on the ground.",
+      "(B) In certain situations, specific areas may be exposed more accurately than others, resulting in variations in brightness.",
+      "(C) During the shoot, the sun was positioned directly above that area, causing it to receive more direct sunlight and appear significantly brighter.",
+      "(D) Light directly shines on certain parts of the water surface, creating strong specular reflections. These reflected light rays are captured by the camera, making those areas appear particularly bright."
+    ],
+    "answer": "D",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_56-2013-0235-6755-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 14,
+    "path": "DOTA_v2_4096_4096/dota_v2_dota_v2_dota_v2_P4596.png",
+    "question": "Can we infer from the construction site and ongoing road construction shown in the picture?",
+    "multi-choice options": [
+      "(A) With a complex logistics and cargo handling system",
+      "(B) The port is bustling with activity.",
+      "(C) This area is undergoing rapid development and transformation.",
+      "(D) It demonstrates the scale and operational efficiency of the port."
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4096_4096_dota_v2_dota_v2_dota_v2_P4596_png.jpg"
+  },
+  {
+    "idx": 15,
+    "path": "MiniFrance/44-2013-0375-6705-LA93-0M50-E080.jp2.tif",
+    "question": "Why are there many small islands on both sides of the river in the picture?",
+    "multi-choice options": [
+      "(A) Global warming has intensified the melting of polar glaciers, leading to a rise in sea levels.",
+      "(B) Sometimes, changes in river water levels can cause previously submerged land to emerge above the surface, forming small islands.",
+      "(C) The flow of river water erodes the riverbanks and also carries materials such as silt, depositing them in areas with slower currents to form islands.",
+      "(D) Human activities sometimes intentionally or unintentionally create artificial islands in rivers."
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_44-2013-0375-6705-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 16,
+    "path": "MiniFrance/29-2012-0165-6780-LA93-0M50-E080.jp2.tif",
+    "question": "Why is there so much empty space in the middle of the image?",
+    "multi-choice options": [
+      "(A) These open spaces may be nature reserves or ecologically sensitive areas, aimed at protecting the local ecosystems.",
+      "(B) These open spaces may be undeveloped land, awaiting further planning or utilization.",
+      "(C) This may be due to urban planning, historical legacy, land reserves, environmental protection, and other reasons.",
+      "(D) Some plots of land may be left fallow to restore soil fertility."
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_29-2012-0165-6780-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 17,
+    "path": "MiniFrance/56-2013-0285-6725-LA93-0M50-E080.jp2.tif",
+    "question": "Is the rectangular area near the water in the picture farmland or something else, and why does this occur?",
+    "multi-choice options": [
+      "(A) These structures are storage tanks for liquids or gases. Although it is uncommon to see them in water, sometimes oil depots are constructed along riverbanks.",
+      "(B) It is likely farmland, typically situated near water sources to facilitate irrigation, which also explains why these fields are found close to bodies of water.",
+      "(C) It could be the orderly arrangement of the regularly shaped fish ponds.",
+      "(D) It could be the neatly arranged shrimp ponds with their regular shapes."
+    ],
+    "answer": "B",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_56-2013-0285-6725-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 18,
+    "path": "DOTA_v2_4096_4096/dota_v2_dota_v2_dota_v2_P4290.png",
+    "question": "What is the suitable location for constructing a port in the image?",
+    "multi-choice options": [
+      "(A) The coastline at the center of the image",
+      "(B) Coastal area along the bottom of the image",
+      "(C) Coastal areas in the image",
+      "(D) Inside of the ocean on the right side of the picture."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4096_4096_dota_v2_dota_v2_dota_v2_P4290_png.jpg"
+  },
+  {
+    "idx": 19,
+    "path": "DOTA_v2_4912_7360/dota_v2_dota_v2_dota_v2_P7770.png",
+    "question": "What can be inferred from the mix of urban and suburban areas in the picture?",
+    "multi-choice options": [
+      "(A) This area is a developing city, yet it lacks advanced transportation infrastructure and adequate natural conservation.",
+      "(B) This area is a developing city, characterized by advanced transportation systems and excellent environmental conservation.",
+      "(C) This area is not a developing city, yet it boasts highly developed transportation and excellent environmental conservation.",
+      "(D) This area is neither a developing city nor does it have advanced transportation systems or well-established nature conservation."
+    ],
+    "answer": "B",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4912_7360_dota_v2_dota_v2_dota_v2_P7770_png.jpg"
+  },
+  {
+    "idx": 20,
+    "path": "DOTA_v2_4096_4096/dota_v2_dota_v2_dota_v2_P3075.png",
+    "question": "How many vehicles are there at the transportation hub in the picture, and what about the parking lots in the commercial district?",
+    "multi-choice options": [
+      "(A) Business activities in this region are very vibrant.",
+      "(B) The region focuses on boosting economic vitality.",
+      "(C) This area experiences high traffic flow.",
+      "(D) This area holds significant importance in terms of transportation and commerce."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4096_4096_dota_v2_dota_v2_dota_v2_P3075_png.jpg"
+  },
+  {
+    "idx": 21,
+    "path": "HRSCD/2012/35-2012-0345-6785-LA93-0M50-E080.tif",
+    "question": "From the layout of the industrial and residential areas in the picture, one can infer?",
+    "multi-choice options": [
+      "(A) Optimizing traffic flow and resource distribution in the region has not maintained an appropriate separation between industrial activities and residential life.",
+      "(B) Reduced traffic flow and resource distribution within the region, while maintaining an appropriate separation between industrial activities and residential life.",
+      "(C) Reduced traffic flow and resource distribution within the region, failing to maintain an appropriate separation between industrial activities and residential life.",
+      "(D) Optimize traffic flow and resource distribution within the region while maintaining an appropriate separation between industrial activities and residential life."
+    ],
+    "answer": "D",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/HRSCD_2012_35-2012-0345-6785-LA93-0M50-E080_tif.jpg"
+  },
+  {
+    "idx": 22,
+    "path": "HRSCD/2012/35-2012-0340-6770-LA93-0M50-E080.tif",
+    "question": "What in the picture indicates a certain level of residential gathering?",
+    "multi-choice options": [
+      "(A) The color and density of the building.",
+      "(B) The number and distribution of vehicles.",
+      "(C) The layout and shape of roads.",
+      "(D) The Existence of Towns and Villages."
+    ],
+    "answer": "D",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/HRSCD_2012_35-2012-0340-6770-LA93-0M50-E080_tif.jpg"
+  },
+  {
+    "idx": 23,
+    "path": "DOTA_v2_4912_7360/dota_v2_dota_v2_dota_v2_P9560.png",
+    "question": "What in the picture indicates that this is a densely populated and bustling urban area?",
+    "multi-choice options": [
+      "(A) Number and Distribution of Vehicles",
+      "(B) Number and Distribution of Buildings",
+      "(C) High density of vehicle and building distribution",
+      "(D) Color and Distribution of Buildings"
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4912_7360_dota_v2_dota_v2_dota_v2_P9560_png.jpg"
+  },
+  {
+    "idx": 24,
+    "path": "MiniFrance/44-2013-0390-6710-LA93-0M50-E080.jp2.tif",
+    "question": "Why are the larger residential areas all concentrated on the left side of the image?",
+    "multi-choice options": [
+      "(A) Due to cultural beliefs, residents of the area prefer living on the left side, considering it to be more auspicious or habitable.",
+      "(B) The land on the right side of the area has been requisitioned by the government, hence there are no residential zones.",
+      "(C) From a geographical perspective, the area on the left may offer more suitable conditions for human habitation, such as the availability of water sources and the distribution of fertile soil and other natural resources.",
+      "(D) The area on the right was once a military restricted zone. Although the ban has since been lifted, the land has been damaged to the extent that it is no longer suitable for habitation."
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_44-2013-0390-6710-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 25,
+    "path": "ITCVD/00147.jpg",
+    "question": "Why isn't the square area above the image planned as a parking lot as well?",
+    "multi-choice options": [
+      "(A) Designing a parking lot can result in narrower and obstructed evacuation routes, and the convergence of vehicles at the parking lot exits may conflict with the normal traffic flow in the surrounding area.",
+      "(B) This area can provide a public recreational space, enhancing the ambiance and appeal of the commercial center.",
+      "(C) The surrounding area has an ample number of parking lots; there is no need for additional parking spaces.",
+      "(D) This issue was not considered during the planning phase."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/ITCVD_00147_jpg.jpg"
+  },
+  {
+    "idx": 26,
+    "path": "DOTA_v2_4096_4096/dota_v2_dota_v2_dota_v2_P3246.png",
+    "question": "Why are there numerous ships docked in the central area of the image, while the surrounding parking lots appear to be full?",
+    "multi-choice options": [
+      "(A) This area has become a popular stopping point due to its proximity to commercial and residential zones.",
+      "(B) The reason vessels dock there is due to the deeper waters in that area.",
+      "(C) The central area is a popular tourist destination, hence it attracts a larger number of docked boats.",
+      "(D) The vessel docked there as it was the only available docking area."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4096_4096_dota_v2_dota_v2_dota_v2_P3246_png.jpg"
+  },
+  {
+    "idx": 27,
+    "path": "MiniFrance/44-2013-0320-6700-LA93-0M50-E080.jp2.tif",
+    "question": "In satellite imagery, large areas of empty space are visible. Why does this occur?\n\nThere are several reasons for the appearance of large empty spaces in satellite images:\n\n1. **Cloud Cover**: Thick clouds can obscure the ground, making it appear as an empty space in the image.\n2. **Technical Limitations**: The satellite's sensors might not be able to capture certain areas due to their limitations or malfunctions.\n3. **Geographical Features**: Some regions, such as deserts or snow-covered areas, might appear as empty due to their uniform color and lack of visible features.\n4. **Data Processing**: Errors in data processing or transmission can lead to gaps or blank areas in the final image.\n5. **Temporal Resolution**: The timing of the satellite passing over certain areas might not coincide with the optimal conditions for capturing clear images, leading to empty-looking spaces.\n\nUnderstanding these factors helps in interpreting satellite imagery more accurately.",
+    "multi-choice options": [
+      "(A) These barren areas are due to anomalies in the Earth's magnetic field, which prevent materials in these regions from maintaining their normal physical state, resulting in large expanses of empty land.",
+      "(B) Certain areas may be designated as industrial or commercial zones, and these areas may appear as vacant lots before construction or during reconstruction.",
+      "(C) These areas have been affected by the rapid proliferation of new types of soil bacteria caused by global warming. These bacteria consume all the organic matter, rendering the land incapable of supporting any form of life.",
+      "(D) It could be caused by natural factors, human activities, environmental changes, among other reasons."
+    ],
+    "answer": "D",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_44-2013-0320-6700-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 28,
+    "path": "Potsdam/top_potsdam_3_12_RGB_Potsdam.png",
+    "question": "Why is there a large cleared area with sparse vegetation in the center of the upper part of the image?",
+    "multi-choice options": [
+      "(A) The area is being prepared for new construction.",
+      "(B) This area is designated as a park with minimal maintenance.",
+      "(C) This area is a natural clearing formed due to soil erosion.",
+      "(D) This area is used for seasonal agricultural activities."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/Potsdam_top_potsdam_3_12_RGB_Potsdam_png.jpg"
+  },
+  {
+    "idx": 29,
+    "path": "MiniFrance/44-2013-0340-6720-LA93-0M50-E080.jp2.tif",
+    "question": "Why is the green plant area so large in the diagram?",
+    "multi-choice options": [
+      "(A) Green plants can absorb carbon dioxide and other harmful gases, releasing oxygen, thereby improving air quality.",
+      "(B) Vegetation helps reduce soil erosion, conserve soil and water, and contributes to maintaining ecological balance.",
+      "(C) Improvements to the local environment include, but are not limited to: enhancing air quality, reducing greenhouse gas emissions, mitigating urban heat island effects, increasing biodiversity, improving soil quality, and providing recreational spaces for residents.",
+      "(D) Green belts can provide habitats for wildlife and enhance biodiversity."
+    ],
+    "answer": "D",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_44-2013-0340-6720-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 30,
+    "path": "MiniFrance/29-2012-0195-6810-LA93-0M50-E080.jp2.tif",
+    "question": "Why is there such a large bend in the river on the left side of the image?",
+    "multi-choice options": [
+      "(A) This large bend in the river was specifically designed in ancient times for dragon boat races. The curvature increases the challenge and visual appeal of the competitions.",
+      "(B) The large bend in this river was specifically designed by ancient Feng Shui masters to stabilize the dragon veins, thereby blessing the residents on both banks with favorable weather and abundant rainfall.",
+      "(C) This may be due to natural geological features, historical changes in water flow, and reasons related to ecological conservation.",
+      "(D) The large bend in this river is due to a powerful natural magnetic field underground, which influences the direction of the water flow, causing the river to naturally form a large bend here."
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_29-2012-0195-6810-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 31,
+    "path": "DOTA_v2_4912_7360/dota_v2_dota_v2_dota_v2_P5034.png",
+    "question": "Why is there a large open green space surrounded by buildings and roads at the center of the image?",
+    "multi-choice options": [
+      "(A) Green spaces are parks designed for recreational activities and community gatherings.",
+      "(B) A greenfield site refers to an undeveloped area designated for a new construction project.",
+      "(C) Green spaces are private properties reserved for future commercial purposes.",
+      "(D) During the event, the green space serves as a temporary area for overflow parking."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4912_7360_dota_v2_dota_v2_dota_v2_P5034_png.jpg"
+  },
+  {
+    "idx": 32,
+    "path": "HRSCD/2006/35-2006-0330-6775-LA93.tif",
+    "question": "What in the picture suggests that the local transportation development is not mature?",
+    "multi-choice options": [
+      "(A) Vehicle Distribution",
+      "(B) Layout of Farmland",
+      "(C) Scattered small villages and farms dot the landscape.",
+      "(D) The number of vehicles"
+    ],
+    "answer": "D",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/HRSCD_2006_35-2006-0330-6775-LA93_tif.jpg"
+  },
+  {
+    "idx": 33,
+    "path": "MiniFrance/44-2013-0340-6690-LA93-0M50-E080.jp2.tif",
+    "question": "Why are there many city roads in the central part of the image?",
+    "multi-choice options": [
+      "(A) Proper road planning is a crucial component of urban development, facilitating orderly expansion and sustainable growth of cities.",
+      "(B) Connecting different regions through roads can strengthen the ties and cooperation between areas, allowing for resource sharing and mutual benefits.",
+      "(C) A well-developed road traffic network facilitates the efficient transportation of goods and services, thereby promoting business activities and economic growth.",
+      "(D) Multiple roads can reduce traffic congestion and enhance the efficiency of vehicle movement."
+    ],
+    "answer": "B",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_44-2013-0340-6690-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 34,
+    "path": "MiniFrance/22-2012-0210-6840-LA93-0M50-E080.jp2.tif",
+    "question": "Why are there so many vacant lots in this area of the image?",
+    "multi-choice options": [
+      "(A) These open spaces are intentionally preserved by the government as private sports fields and recreational areas for the local residents, who enjoy engaging in outdoor activities.",
+      "(B) These open spaces are designed to simulate the layout of ancient villages, where large areas of land between residential zones were necessary for cultivating crops, thus preserving the traditional way of life.",
+      "(C) These open spaces may be designated as urban green spaces, parks, or reserved for future development.",
+      "(D) These vacant lands remain undeveloped and unusable due to historical land ownership disputes that have yet to be resolved."
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_22-2012-0210-6840-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 35,
+    "path": "MiniFrance/59-2012-0725-7030-LA93-0M50-E080.jp2.tif",
+    "question": "In the forest area adjacent to the residential area in the top right of the image, there is a large circular geological feature visible in the center. What could this area be, and why might this feature have formed?",
+    "multi-choice options": [
+      "(A) These are man-made parks, recreational areas, or other types of open spaces.",
+      "(B) This is the result of past mining activities. Open-pit mining leaves such terrain features, especially when the pits are abandoned and filled with rainwater.",
+      "(C) If the area was previously used for mining or industrial purposes, the circular shape now is due to an ecological restoration project aimed at rebuilding the local ecosystem and creating a natural appearance.",
+      "(D) It may be the crater of an extinct volcano. Over time, as volcanic activity ceases, vegetation gradually covers the edges of the crater, making the entire structure appear as a large circular pit surrounded by trees."
+    ],
+    "answer": "D",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_59-2012-0725-7030-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 36,
+    "path": "MiniFrance/44-2013-0305-6705-LA93-0M50-E080.jp2.tif",
+    "question": "Why is there a road above the river in the bottom right corner of the image?",
+    "multi-choice options": [
+      "(A) This is an ancient canal relic that once served as a vital water transportation route and is now preserved as a historical site.",
+      "(B) This road is actually an ecological corridor designed for wildlife, aimed at helping animals safely cross busy road areas and maintain the connectivity of their habitats.",
+      "(C) This road actually serves as a flood control dike, designed to protect the surrounding area from flooding.",
+      "(D) This road is likely a bridge constructed over a river, designed to connect the two banks and facilitate the flow of traffic and passage."
+    ],
+    "answer": "D",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_44-2013-0305-6705-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 37,
+    "path": "MiniFrance/44-2013-0365-6755-LA93-0M50-E080.jp2.tif",
+    "question": "Why is there a roundabout in the center of the largest cluster of houses towards the bottom of the picture?",
+    "multi-choice options": [
+      "(A) Roundabouts can effectively distribute the flow of vehicles, reduce traffic pressure at intersections, and enhance the efficiency of road usage.",
+      "(B) Sometimes roundabouts are designed around significant historical buildings, monuments, or other landmark structures to highlight their importance.",
+      "(C) The circular road is an installation set up by a contemporary artist in a rural area to express an abstract concept, and it actually serves no practical traffic purpose.",
+      "(D) The government is conducting a secret experiment in an ostensibly ordinary rural area, using the surrounding island as a testing ground for autonomous vehicles or other undisclosed technologies."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_44-2013-0365-6755-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 38,
+    "path": "MiniFrance/44-2013-0385-6720-LA93-0M50-E080.jp2.tif",
+    "question": "The image primarily shows farmland and scattered farms. Why is there a large forested area slightly to the right in the middle of the upper part?",
+    "multi-choice options": [
+      "(A) The soil in this region is unsuitable for cultivating crops, hence the original forests have been preserved.",
+      "(B) The region's abundant water sources attract a large number of birds, creating a unique ecosystem.",
+      "(C) The government or local community may preserve this forest for ecological protection or other reasons.",
+      "(D) Due to land ownership issues."
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_44-2013-0385-6720-LA93-0M50-E080_jp2_tif.jpg"
+  },
+  {
+    "idx": 39,
+    "path": "ITCVD/00001.jpg",
+    "question": "In the center of the picture, there is a large open area with significantly fewer parked vehicles compared to the surrounding areas. Why is this the case?",
+    "multi-choice options": [
+      "(A) This area is reserved for emergency services only.",
+      "(B) This area is currently under construction and closed to the public.",
+      "(C) This area is pedestrian-only.",
+      "(D) This area is a popular venue for events and is currently hosting one."
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/ITCVD_00001_jpg.jpg"
+  },
+  {
+    "idx": 40,
+    "path": "DOTA_v2_4912_7360/dota_v2_dota_v2_dota_v2_P7834.png",
+    "question": "Does the detailed description in the picture showcase the typical features of an urban area?",
+    "multi-choice options": [
+      "(A) High-density architecture and diverse road networks",
+      "(B) High-density architecture with abundant greenery",
+      "(C) High-density architecture, diverse road networks, and abundant greenery",
+      "(D) Diverse road networks and abundant greenery"
+    ],
+    "answer": "C",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/DOTA_v2_4912_7360_dota_v2_dota_v2_dota_v2_P7834_png.jpg"
+  },
+  {
+    "idx": 41,
+    "path": "MiniFrance/14-2012-0420-6875-LA93-0M50-E080.jp2.tif",
+    "question": "Why are the vehicles densely packed in the central area of the image, and why are the road intersections complex, especially around the large buildings near the center?",
+    "multi-choice options": [
+      "(A) This may be due to factors such as the concentration of economic activities, transportation hubs, and road design in the city center.",
+      "(B) Large buildings possess a certain \"gravitational pull\" that attracts vehicles and pedestrian traffic, leading to congestion around them.",
+      "(C) Modern vehicle navigation systems are designed with deviations to prevent mistakenly directing a large volume of traffic around major buildings in central areas.",
+      "(D) Poorly designed intersections lead to frequent traffic congestion."
+    ],
+    "answer": "A",
+    "category": "Complex reasoning/Anomaly Detection and Interpretation",
+    "local_image": "/home/admin1/models/xlrs_arrow/images/MiniFrance_14-2012-0420-6875-LA93-0M50-E080_jp2_tif.jpg"
+  }
+]
