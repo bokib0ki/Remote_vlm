@@ -1,0 +1,21 @@
+{
+  "name": "smoke_vqa_5q",
+  "seed": 42,
+  "description": "5-question smoke test for eval_select.py",
+  "benchmarks": {
+    "vrs_vqa": {
+      "source": "/home/admin1/models/VRSBench_EVAL_vqa.json",
+      "select_by": "question_id",
+      "ids": [
+        6469,
+        5512,
+        10453,
+        10169,
+        10013
+      ],
+      "mode": "manual",
+      "requested": 5,
+      "actual_count": 5
+    }
+  }
+}
