@@ -9,14 +9,17 @@ ROOT = Path('/home/admin1/models')
 
 # ─── 模型列表 ─────────────────────────────────────────────
 ALL_MODELS = [
-    'minicpm-v-4.6',  # MiniCPM-V 4.6B (thinkON 支持)
-    'qwen3.5-0.8B',   # Qwen3.5-VL 0.8B (thinkON 支持)
-    'qwen3.5-2B',     # Qwen3.5-VL 2B (thinkON 支持)
-    'qwen3.5-4B',     # Qwen3.5-VL 4B (thinkON 支持)
-    'qwen3-vl-2B',    # Qwen3-VL 2B
-    'qwen3-vl-4B',    # Qwen3-VL 4B
-    'gemma-4-e2b',    # Gemma-4 2B
-    'gemma-4-e4b',    # Gemma-4 4B
+    'minicpm-v-4.6',           # MiniCPM-V 4.6B (thinkON 支持)
+    'qwen2.5-vl-3B',           # Qwen2.5-VL 3B (无 native think, 仅 thinkOFF)
+    'qwen2.5-vl-7B',           # Qwen2.5-VL 7B (无 native think, 仅 thinkOFF)
+    'qwen3.5-0.8B',            # Qwen3.5-VL 0.8B (thinkON 支持)
+    'qwen3.5-2B',              # Qwen3.5-VL 2B (thinkON 支持)
+    'qwen3.5-4B',              # Qwen3.5-VL 4B (thinkON 支持)
+    'qwen3-vl-2B',             # Qwen3-VL 2B Instruct
+    'qwen3-vl-4B',             # Qwen3-VL 4B Instruct
+    'qwen3-vl-4B-thinking',    # Qwen3-VL 4B Thinking (强制 thinkON)
+    'gemma-4-e2b',             # Gemma-4 2B
+    'gemma-4-e4b',             # Gemma-4 4B
 ]
 DUAL_MODELS = [
     'minicpm-v-4.6',
@@ -29,6 +32,8 @@ DUAL_MODELS = [
     'gemma-4-e4b',
 ]
 # ↑ 支持 thinkON/thinkOFF 双模式的模型
+# 注: qwen2.5-vl-* 走 Qwen2.5 chat_template (无 enable_thinking 参数),
+#     qwen3-vl-4B-thinking 强制 thinkON, 都不进 DUAL_MODELS。
 
 # ─── 图片目录 ─────────────────────────────────────────────
 VRS_IMG_DIR   = ROOT / 'vrsbench_images' / 'Images_val'        # 9351 张
