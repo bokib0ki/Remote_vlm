@@ -1,0 +1,6 @@
+pycache/
+    *.pyc
+    *.pyo
+    Agent_trash/
+    *.log
+    .DS_Store

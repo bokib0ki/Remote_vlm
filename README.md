@@ -8,6 +8,8 @@
 - 所有评测严格使用 `temperature=0.0`（greedy 解码）
 - 评测方式完全按照 `bench_cofig/` 中的官方 benchmark 配置
 - 支持 VQA 三级评测（L1 substring → L2 yes/no/数字 → L3 LLM 语义）
+  - **L1/L2 在 eval_select.py 中直接输出准确率**
+  - **L3 语义评测由 VQA_V3.py 单独运行**
 - 支持 selection JSON 题目清单评测（按需采样，不跑全量）
 
 # 一、数据集说明
@@ -88,6 +90,8 @@ remote_vlm_eval/                    项目根目录（/home/admin1/projects/remo
 │                                  严格遵循 bench_cofig/ 官方配置
 ├── bench_config_loader.py          bench_cofig 配置加载器
 ├── vqa_judge.py                    VRSBench VQA 三级评测器（L1/L2/L3）
+├── VQA_V3.py                       L3 语义评测脚本（读取 vqa_l3_raw.json 输出最终 acc）
+├── run_bench_all.py                 自动化批量评测脚本（Qwen3.5-4B+MiniCPM-V think-off，5个bench，递增保存）
 ├── gen_excel_sel.py                selection 评测的 Excel 报告生成
 ├── create_feishu_doc*.py           飞书文档生成（旧版，可忽略）
 ├── analyze_selection_tasks.py       任务分析工具

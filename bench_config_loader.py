@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 # 项目根目录
-PROJECT_ROOT = Path(__file__).parent.parent
+PROJECT_ROOT = Path(__file__).parent.resolve()
 BENCH_CONFIG_DIR = PROJECT_ROOT / "bench_cofig"
 
 # 支持的 benchmark 列表

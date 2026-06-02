@@ -29,7 +29,21 @@ from metrics import compute_caption_scores
 from model_store import save_run_from_raw_records
 from bench_config_loader import load_bench_config, build_prompt, get_max_new_tokens, check_temperature
 
-print = lambda *a, **kw: __builtins__.print(*a, **kw, flush=True)
+import builtins as _builtins
+_print = _builtins.print
+print = lambda *a, **kw: _print(*a, **{**kw, 'flush': True})
+
+
+def _progress(cur, total, bench='', prefix='', bar_w=30):
+    pct = cur / max(total, 1)
+    filled = int(bar_w * pct)
+    bar = '█' * filled + '░' * (bar_w - filled)
+    elapsed = time.time() - _t0
+    eta = (elapsed / max(cur, 1) * (total - cur)) if cur > 0 else 0
+    print(f"\r  [{bench}] {bar} {cur}/{total} ({pct*100:.0f}%) ETA={eta:.0f}s  ", end='', flush=True)
+
+
+_t0 = time.time()
 
 
 def compute_caption_scores_safe(refs: dict, hyps: dict) -> dict:
@@ -193,8 +207,17 @@ def _get_choices_xlrs(ann: dict) -> list:
 
 def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: int | None):
     mode_tag = '_thinkON' if enable_thinking else '_thinkOFF'
-    select_name = Path(select_doc.get('name') or Path(select_doc.get('_path', 'selection')).stem).stem
-    config_tag = f"{model_name}{mode_tag}_{select_name}"
+    # select_name 用 selection JSON 的父目录/stem，让 results 目录结构与 selection 一致
+    # 例子: sampled_eval/lever_test2/name.json -> select_name='lever_test2/name'
+    _sp = Path(select_doc.get('_path', '') or 'selection')
+    if _sp.suffix == '.json' and _sp.parent.name:
+        select_name = f"{_sp.parent.name}/{_sp.stem}"
+    elif select_doc.get('name'):
+        select_name = str(select_doc['name'])
+    else:
+        select_name = _sp.stem
+    # config_tag 用作文件名，'/' 替换为 '_' 避免子目录歧义
+    config_tag = f"{model_name}{mode_tag}_{select_name.replace('/', '_')}"
     print(f"\n{'='*60}")
     print(f"  {config_tag}")
     print(f"  [bench_cofig] 官方配置模式")
@@ -236,6 +259,7 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
         'bench_cofig_mode': True,  # 标记使用官方配置
     }
     raw_records = []
+    run_start_time = time.time()
 
     benches = select_doc['benchmarks']
     only = set(select_doc.get('_only_benchmarks') or [])
@@ -277,6 +301,7 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
             times_s = []
             
             for i, ann in enumerate(anns):
+                _progress(i + 1, len(anns), 'vrs_caption')
                 img = safe_img(str(VRS_IMG_DIR / ann.get('image_id', ann.get('image', ''))),
                                fallback_dir=str(TEST_IMGS[0].parent) if TEST_IMGS else None)
                 gt = str(ann.get('ground_truth', '') or ann.get('caption', '')).strip()
@@ -310,7 +335,8 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
             stats = {'min': min(token_lens), 'max': max(token_lens),
                      'avg': round(sum(token_lens)/len(token_lens), 1)} if token_lens else {}
             row['benchmarks']['vrs_caption'] = {**scores, 'token_stats': stats, 'perf': perf_stats(times_s, token_lens), 'n': len(anns)}
-            print(f"    done ({time.time()-t0:.0f}s) n={len(anns)} bleu4={scores['bleu4']}")
+            print(f"\n    done [{bench_name}] n={len(anns)} bleu4={scores['bleu4']} (t={time.time()-run_start_time:.0f}s)")
+
             
         elif bench_name == 'vrs_vqa':
             # VRS-VQA: VQA 任务
@@ -327,15 +353,18 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
                 max_new_tokens = configured_max if configured_max is not None else (4096 if enable_thinking else 64)
             
             # 导入 VQA 三级评测器
-            from vqa_judge import vqa_judge
+            # VQA Judge（只用 L1/L2，L3 交给 VQA_V3.py）
+            from vqa_judge import vqa_judge_l1, vqa_judge_l2
             
             correct, total = 0, 0
-            correct_l1, correct_l2, correct_l3 = 0, 0, 0
+            correct_l1, correct_l2 = 0, 0
+            l3_records = []  # 需要 L3 评测的记录，交给 VQA_V3.py
             vqa_records = []
             token_lens = []
             times_s = []
             
             for i, ann in enumerate(anns):
+                _progress(i + 1, len(anns), 'vrs_vqa')
                 img = safe_img(str(VRS_IMG_DIR / ann.get('image_id', ann.get('image', ''))),
                                fallback_dir=str(TEST_IMGS[0].parent) if TEST_IMGS else None)
                 q = _get_question(ann, bench_name)
@@ -343,29 +372,40 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
                 if not gt:
                     continue
                 
-                # 构建 img_path 用于 L3 评测
                 img_id = ann.get('image_id', ann.get('image', ''))
-                img_path = str(VRS_IMG_DIR / img_id) if img_id else None
                 
                 # 使用官方 prompt（构建完整的格式化 prompt）
                 prompt = build_prompt(bench_name, {'question': q}, bench_cfg)
                 clean, raw, res, dt = _run(img, prompt, max_new_tokens=max_new_tokens)
                 nt = res['out_tokens']
                 
-                # VRSBench 官方三级评测: L1 substring → L2 yes/no/数字 → L3 Qwen3.7语义
-                judge_result = vqa_judge(q, gt, clean, image_path=img_path)
-                ok = judge_result['correct']
-                
-                # 统计各级别
-                level = judge_result.get('level', 'L1')
-                if level == 'L1':
+                # L1 substring 匹配
+                l1_ok = vqa_judge_l1(gt, clean)
+                if l1_ok:
                     correct_l1 += 1
-                elif level == 'L2':
-                    correct_l2 += 1
-                elif level == 'L3':
-                    correct_l3 += 1
+                    correct += 1
+                    level, method, ok = 'L1', 'substring', 1
+                else:
+                    # L2 yes/no/数字 精确匹配
+                    l2_res = vqa_judge_l2(gt, clean)
+                    if l2_res is not None:
+                        correct_l2 += 1
+                        correct += 1
+                        level, method, ok = 'L2', 'exact', l2_res
+                    else:
+                        # L3 需要 GPT 语义评测，交给 VQA_V3.py
+                        level, method, ok = 'L3', 'pending', 0
+                        img_path = str(VRS_IMG_DIR / img_id) if img_id else None
+                        l3_records.append({
+                            'benchmark': 'VRS-VQA',
+                            '_idx': ann.get('question_id', ann.get('_original_index', i)),
+                            'image_id': img_id,
+                            'image_path': img_path,
+                            'gt': gt, 'pred': clean,
+                            'question': q,
+                            'pred_raw': raw,
+                        })
                 
-                correct += ok
                 total += 1
                 token_lens.append(nt)
                 times_s.append(dt)
@@ -377,7 +417,7 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
                     'gt': gt, 'pred': clean, 'tokens': nt,
                     'question': q, 'correct': ok,
                     'judge_level': level,
-                    'judge_method': judge_result.get('method', 'substring'),
+                    'judge_method': method,
                     'pred_raw': raw,
                     'time_s': round(dt, 4),
                     'speed': res['speed'],
@@ -392,11 +432,12 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
                 raw_records.append(rec)
             
             row['benchmarks']['vrs_vqa'] = {
-                'acc': round(correct / max(total, 1), 4),  # 总准确率（三级合并）
+                'acc': round(correct / max(total, 1), 4),   # L1+L2 准确率（不含 L3）
                 'acc_l1': round(correct_l1 / max(total, 1), 4),
+                'acc_l2': round(correct_l2 / max(total, 1), 4),
                 'correct_l1': correct_l1,
                 'correct_l2': correct_l2,
-                'correct_l3': correct_l3,
+                'n_l3_pending': len(l3_records),           # 需要 VQA_V3.py 评测的记录数
                 'total': total,
                 'n': len(anns),
                 'perf': perf_stats(times_s, token_lens),
@@ -405,7 +446,11 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
             raw_dir.mkdir(parents=True, exist_ok=True)
             with open(raw_dir / 'vqa_raw.json', 'w') as f:
                 json.dump(vqa_records, f, indent=2)
-            print(f"    done ({time.time()-t0:.0f}s) n={len(anns)} acc={correct}/{total} (L1={correct_l1}/L2={correct_l2}/L3={correct_l3})")
+            # L3 待评测记录，供 VQA_V3.py 使用
+            with open(raw_dir / 'vqa_l3_raw.json', 'w') as f:
+                json.dump(l3_records, f, indent=2)
+            print(f"\n    done [{bench_name}] n={len(anns)} acc={correct}/{total} (L1={correct_l1}/L2={correct_l2}/L3_待评测={len(l3_records)}) (t={time.time()-run_start_time:.0f}s)")
+
             
         elif bench_name == 'mme_rs':
             # MME-RS: 多选 VQA
@@ -425,6 +470,7 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
             times_s = []
             
             for i, ann in enumerate(anns):
+                _progress(i + 1, len(anns), 'mme_rs')
                 img_path_str = ann.get('Image', '') or ann.get('image', '')
                 if MME_RS_DIR.exists() and img_path_str:
                     fp = MME_RS_DIR / Path(img_path_str).name
@@ -475,8 +521,9 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
                 'token_stats': {'min': min(token_lens), 'max': max(token_lens),
                                 'avg': round(sum(token_lens)/len(token_lens), 1)} if token_lens else {},
             }
-            print(f"    done ({time.time()-t0:.0f}s) n={len(anns)} acc={correct}/{total}")
-            
+            print(f"\n    done [{bench_name}] n={len(anns)} acc={correct}/{total} (t={time.time()-run_start_time:.0f}s)")
+
+
         elif bench_name == 'levir_cc':
             # LEVIR-CC: 变化描述（双图）
             # 官方配置: PROMPT_TEMPLATE = "Describe the changes between these two remote sensing images..."
@@ -491,6 +538,7 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
             times_s = []
             
             for i, ann in enumerate(anns):
+                _progress(i + 1, len(anns), 'levir_cc')
                 fname = ann.get('filename') or ann.get('image') or ''
                 before = safe_img(str(LEVIR_DIR / 'A' / fname),
                                   fallback_dir=str(TEST_IMGS[0].parent) if TEST_IMGS else None)
@@ -528,7 +576,8 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
             stats = {'min': min(token_lens), 'max': max(token_lens),
                      'avg': round(sum(token_lens)/len(token_lens), 1)} if token_lens else {}
             row['benchmarks']['levir_cc'] = {**scores, 'token_stats': stats, 'perf': perf_stats(times_s, token_lens), 'n': len(anns)}
-            print(f"    done ({time.time()-t0:.0f}s) n={len(anns)} bleu4={scores['bleu4']}")
+            print(f"\n    done [{bench_name}] n={len(anns)} bleu4={scores['bleu4']} (t={time.time()-run_start_time:.0f}s)")
+
             
         elif bench_name == 'xlrs':
             # XLRS: 多选 VQA（超高分辨率）
@@ -548,6 +597,7 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
             times_s = []
             
             for i, ann in enumerate(anns):
+                _progress(i + 1, len(anns), 'xlrs')
                 local_img = ann.get('local_image', '')
                 if local_img and Path(local_img).exists():
                     img = Image.open(local_img).convert('RGB')
@@ -600,7 +650,7 @@ def run_eval(model_name: str, enable_thinking: bool, select_doc: dict, max_new: 
                 'token_stats': {'min': min(token_lens), 'max': max(token_lens),
                                 'avg': round(sum(token_lens)/len(token_lens), 1)} if token_lens else {},
             }
-            print(f"    done ({time.time()-t0:.0f}s) n={len(anns)} acc={correct}/{total}")
+            print(f"\n    done [{bench_name}] n={len(anns)} acc={correct}/{total} (t={time.time()-run_start_time:.0f}s)")
 
     res_dir = RES_DIR / select_name
     res_dir.mkdir(parents=True, exist_ok=True)
