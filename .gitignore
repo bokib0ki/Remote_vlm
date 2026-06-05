@@ -1,6 +1,16 @@
-pycache/
-    *.pyc
-    *.pyo
-    Agent_trash/
-    *.log
-    .DS_Store
+__pycache__/
+*.pyc
+*.pyo
+*.swp
+.DS_Store
+*.log
+logs/
+Agent_trash/
+# Excel 锁文件（Windows/Office 临时）
+~$*.xlsx
+~$*.xls
+~$*.excel
+# LLM Audit 太大大（310MB）— 超 GitHub 100MB 限制
+excel_result/VQA_LLM_Audit.xlsx
+# 临时缩略图缓存
+/tmp/vqa_llm_audit_thumbs_*
